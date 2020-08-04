@@ -10,5 +10,8 @@ loginForm.addEventListener('submit', function (e) {
       localStorage.setItem('api-token', resp.data.token);
       window.location.href = 'index.html';
     }
-  })
+  }, (err) => {
+    alert("pour accéder veuillez d'abord vous enregistrer");
+    window.location.href = 'signup.html'
+  });
 });

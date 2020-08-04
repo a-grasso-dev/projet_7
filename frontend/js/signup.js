@@ -12,5 +12,8 @@ signupForm.addEventListener('submit', function (e) {
         if (resp.data.status === 'OK') {
             window.location.href = 'index.html'
         }
-    })
+    }, (err) => {
+        alert("vous êtes déjà enregistré! Veuillez entrée avec votre email et votre mot de passe");
+        window.location.href = 'login.html'
+    });
 });

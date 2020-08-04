@@ -1,5 +1,5 @@
 const headers = {
-    headers: {'Authorization': "Bearer " + localStorage.getItem("api-token")}
+    headers: { 'Authorization': "Bearer " + localStorage.getItem("api-token") }
 };
 
 const getMessages = () => axios.get("http://localhost:3000/api/messages", headers).then((data) => {
@@ -140,16 +140,6 @@ const listMessages = (messages) => {
                 likeOrDislike = likeOrDislike === 'like' ? 'dislike' : 'like'
             })
         })
-
-        /*
-                btnDislikes.addEventListener('click', () => {
-                    axios.post(`http://localhost:3000/api/messages/${messages[i].id}/vote/dislike`, {}, headers).then((resp) => {
-                        nbLikes -= 1
-                        spanLikes.innerHTML = nbLikes + " J'aime";
-                    })
-                })
-        */
-
     }
 };
 getMessages()
